@@ -8,7 +8,13 @@ Rails.application.configure do
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
+  config.action_mailer.default_url_options = { :host => 'lando-saas-app.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
   config.eager_load = true
+  
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
